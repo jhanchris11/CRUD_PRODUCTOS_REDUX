@@ -35,7 +35,7 @@ export default makeStyles({
     productIcon: {
         marginLeft: '.7rem',
         fontSize: '4rem',
-        color: 'blue'
+        color: '#ff6d00'
     },
     buttonDelete: {
         marginLeft: '.7rem'

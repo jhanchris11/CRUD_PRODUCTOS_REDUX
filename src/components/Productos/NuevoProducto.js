@@ -73,7 +73,7 @@ const NuevoProducto = ({ history }) => {
                 <Grid container className={classes.titleContainer}>
 
                     <Grid className={classes.itemTextField}>
-                        <Grid item>
+                        <Grid item className={classes.item1}>
                             <TextField type="text"
                                 label="Nombre del Producto"
                                 name="nombre"
@@ -82,7 +82,7 @@ const NuevoProducto = ({ history }) => {
 
                             />
                         </Grid>
-                        <Grid item>
+                        <Grid item className={classes.item2}>
                             <TextField
                                 type="number"
                                 label="Precio del Producto"

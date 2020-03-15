@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
-import { Paper, TableRow, TableHead, TableCell, Table,  TableBody, Container } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+
+import { Paper, TableRow, TableHead, TableCell, Table, TableBody, Container, Typography, Grid, Button } from '@material-ui/core'
 
 // import styles from './Style';
 import { Alert } from '@material-ui/lab';
@@ -8,6 +10,8 @@ import { useDispatch, useSelector } from 'react-redux'
 /* ------Actions de Redux ------ */
 import { obtenerProductosAction } from '../../actions/productoAction'
 import Producto from './Producto';
+
+import styles from './Style';
 
 
 const Productos = () => {
@@ -20,7 +24,7 @@ const Productos = () => {
     //         fontSize: 14,
     //     },
     // }))(TableCell);
-    // const classes = styles();
+    const classes = styles();
 
     const dispatch = useDispatch();
 
@@ -33,15 +37,26 @@ const Productos = () => {
 
     const productos = useSelector(state => state.productos.productos)
     const error = useSelector(state => state.productos.error)
-    const loading = useSelector(state=>state.productos.loading)
+    const loading = useSelector(state => state.productos.loading)
 
     return (
         // <Container className={classes.container}>
         //     <Card className={classes.cardContainer}>
-        <Container>
+        <Container className={classes.listado}>
             {/* <Card> */}
+            <Grid className={classes.containerListado}>
+                <Typography className={classes.titleListado} >Listado de Productos</Typography>
+            </Grid>
+            <Grid className={classes.buttonListado}>
+                <Button variant="contained" >
+                    <Link style={{ textDecoration: 'none', color: 'orange' }} to={'/'}>
+                        Menu Principal
+                    </Link>
+                </Button>
+            </Grid>
+
             <Paper>
-                {/* <Typography>Listadoo de Productos</Typography> */}
+
 
                 {error ? <Alert severity="error" >Hubo un error </Alert> : null}
                 {loading ? <Alert severity="success" >Cargando ... </Alert> : null}
