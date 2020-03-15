@@ -14,6 +14,11 @@
       "id": 10,
       "nombre": "Pastel de Chocolate",
       "precio": "800"
+    },
+    {
+      "nombre": "1",
+      "precio": 1,
+      "id": 11
     }
   ]
 }

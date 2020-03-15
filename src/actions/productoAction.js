@@ -24,7 +24,6 @@ import {
 /*--------AXIOS-------- */
 import clienteAxios from '../config/axios'
 import Swal from 'sweetalert2'
-import EditarProducto from '../components/Productos/EditarProducto'
 
 export function crearNuevoProductoAction(producto) {
     //Aqui se hace las consultas a la bd y tambien se manda a ejecutar el reducer para modificar el state

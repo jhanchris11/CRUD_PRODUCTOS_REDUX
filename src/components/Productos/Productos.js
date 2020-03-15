@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { Paper, TableRow, TableHead, TableCell, Table, Card, TableBody, Typography, Container } from '@material-ui/core'
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import styles from './Style';
+import { Paper, TableRow, TableHead, TableCell, Table,  TableBody, Container } from '@material-ui/core'
+
+// import styles from './Style';
 import { Alert } from '@material-ui/lab';
 import { useDispatch, useSelector } from 'react-redux'
 

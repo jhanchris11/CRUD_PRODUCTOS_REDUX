@@ -8,7 +8,8 @@ import styles from './Style';
 import { useDispatch, useSelector } from 'react-redux'
 
 /* ------Actions de Redux ------ */
-import { crearNuevoProductoAction } from '../../actions/productoAction.js'
+import { crearNuevoProductoAction } from '../../actions/productoAction'
+import { mostrarAlertaAction, ocultarAlertaAction } from '../../actions/alertaAction'
 
 const NuevoProducto = ({ history }) => {
 
@@ -22,8 +23,7 @@ const NuevoProducto = ({ history }) => {
     const dispatch = useDispatch()
 
     //Acceder el state del store 
-    const cargando = useSelector(state => state.productos.loading)
-    const error = useSelector(state => state.productos.error)
+    const alerta = useSelector(state => state.alerta.alerta)
 
     /*Mandar llamar al action de productoAction */
     /*dispatch va a mandar a ejcutar otra funcion que en este caso seria crear... , 
@@ -39,11 +39,20 @@ const NuevoProducto = ({ history }) => {
 
         //Validar formulario
         if (nombre.trim() === '' || precio <= 0) {
-            console.log(precio)
+
+            const alerta = {
+                msg: 'Ambos campos son obligatorios',
+                classes: 'error'
+            }
+            dispatch(mostrarAlertaAction(alerta))
             return
 
         }
         //si no hay errores
+
+        dispatch(ocultarAlertaAction())
+
+
         //crear el nuevo producto
         addProducto({
             nombre,
@@ -91,10 +100,8 @@ const NuevoProducto = ({ history }) => {
 
                 </Grid>
                 <Grid className={classes.buttonsError} >
-                    {error ? <Alert severity="error" >Hubo un error </Alert> : null}
+                    {alerta ? <Alert severity={alerta.classes}> {alerta.msg}</Alert> : null}
                 </Grid>
-                {/* {cargando ? <p>Cargando ...</p> : null} */}
-
             </Card>
 
         </Container>
