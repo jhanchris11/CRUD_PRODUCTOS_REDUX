@@ -1,0 +1,19 @@
+{
+  "productos": [
+    {
+      "nombre": "Pastel de Fresa",
+      "precio": "50",
+      "id": 6
+    },
+    {
+      "nombre": "Pastel de Fresa",
+      "precio": "120",
+      "id": 7
+    },
+    {
+      "id": 10,
+      "nombre": "Pastel de Chocolate",
+      "precio": "800"
+    }
+  ]
+}
