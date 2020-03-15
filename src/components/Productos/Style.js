@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import purple from '@material-ui/core/colors/purple';
 const centeredStyleObj = {
     display: 'flex',
     alignItems: 'center',
